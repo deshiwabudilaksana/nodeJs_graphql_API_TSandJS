@@ -26,6 +26,8 @@ export const userFind = UserTC.mongooseResolvers
   .wrapResolve((next) => async (rp: ResolverResolveParams<any, any>) => {
     return await User.find();
   });
+export const userFindOne = UserTC.mongooseResolvers.findOne();
+export const userFindMany = UserTC.mongooseResolvers.findMany();
 export const userCreateOne = UserTC.mongooseResolvers.createOne().wrapResolve(validatedInputResolver);
 export const userUpdateById = UserTC.mongooseResolvers.updateById().wrapResolve(validatedInputResolver);
 
